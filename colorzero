@@ -1,0 +1,16 @@
+#colorzero is a colour manipulation library that aims to be simple to use and Pythonic in nature.
+colorzero makes it easy to transition between two colours:
+
+from colorzero import Color
+from sense_hat import SenseHat
+from time import sleep
+
+sense = SenseHat()
+
+start = Color('yellow')
+end = Color('cyan')
+
+# Slowly transition the Sense HAT from the `start` to the `end` colour
+for color in start.gradient(end, steps=100):
+    sense.clear(color.rgb_bytes)
+    sleep(0.1)

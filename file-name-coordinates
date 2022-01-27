@@ -1,0 +1,6 @@
+from orbit import ISS
+location = ISS.coordinates()
+
+file= open(f'{location}.txt)','w')
+
+file.close()
